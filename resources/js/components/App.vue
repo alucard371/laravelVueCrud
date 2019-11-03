@@ -11,6 +11,7 @@
 <script>
 import masthead from './masthead';
 // import imageuploader from './ImageUploader';
+import ProfileEditor from './ProfileEditor';
 export default {
 
 
