@@ -1851,7 +1851,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
  // import imageuploader from './ImageUploader';
 
 
@@ -1926,8 +1925,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1991,10 +1988,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "masthead",
   props: {
-    name: String
+    // name: String
+    profile: Object
+  },
+  data: function data() {
+    return {
+      profile: Object
+    };
   }
 });
 
@@ -37309,11 +37313,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("masthead", { attrs: { name: _vm.name } }),
-      _vm._v(" "),
-      _c("img", { attrs: { src: "storage/userpics/" + _vm.imagepath } }),
-      _vm._v(" "),
-      _c("p", [_vm._v("test")]),
+      _c("masthead", { attrs: { profile: _vm.profile } }),
       _vm._v(" "),
       _c("ProfileEditor")
     ],
@@ -37343,9 +37343,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("form", { attrs: { action: "" } }, [
-    _vm._v(
-      "\n    " + _vm._s(_vm.name) + "\n    " + _vm._s(_vm.file) + "\n    "
-    ),
     _c("input", {
       directives: [
         {
@@ -37408,7 +37405,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("header", [_c("h1", [_vm._v(_vm._s(_vm.name))])])
+  return _c("header", [
+    _c("h1", [_vm._v(_vm._s(_vm.profile.name))]),
+    _vm._v(" "),
+    _c("img", { attrs: { src: "storage/userpics/" + _vm.profile.img_path } })
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

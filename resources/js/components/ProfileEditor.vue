@@ -1,7 +1,5 @@
 <template>
   <form action="">
-      {{ name }}
-      {{ file }}
       <input type="text" v-model="name" name="" id="">
       <input type="file" name="" id="" accept="image/*" @change="selectFile">
       <button @click.prevent="onSubmit">Submit</button>

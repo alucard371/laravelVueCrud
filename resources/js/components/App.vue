@@ -1,11 +1,10 @@
 <template>
   <div>
-      <masthead :name="name"></masthead>
-      <img v-bind:src="'storage/userpics/' + imagepath"/>
+      <masthead :profile="profile"></masthead>
+      <!-- <img v-bind:src="'storage/userpics/' + profile.img_path"/> -->
       <!-- Debug imagepath -->
       <!-- {{ imagepath }} -->
       <!-- <imageuploader></imageuploader> -->
-      <p>test</p>
       <ProfileEditor></ProfileEditor>
   </div>
 </template>
