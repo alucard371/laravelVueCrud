@@ -1,7 +1,7 @@
 <template>
     <header>
-        <h1>{{ profile.name }}</h1>
         <img v-bind:src="'storage/userpics/' + profile.img_path"/>
+        <h1>{{ profile.name }}</h1>
     </header>
 </template>
 
@@ -19,3 +19,14 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+header{
+    background: #04BC92;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+</style>
