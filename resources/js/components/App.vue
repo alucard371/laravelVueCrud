@@ -5,6 +5,8 @@
       <!-- Debug imagepath -->
       <!-- {{ imagepath }} -->
       <!-- <imageuploader></imageuploader> -->
+      <p>test</p>
+      <ProfileEditor></ProfileEditor>
   </div>
 </template>
 
@@ -17,8 +19,9 @@ export default {
 
    name: "App",
    components: {
-       masthead,
+    masthead,
     //    imageuploader
+    ProfileEditor,
    },
     data() {
         return {

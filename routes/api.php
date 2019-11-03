@@ -21,3 +21,5 @@ Route::resource('basicinfo', 'BasicinfoController');
 
 Route::post('/uploadimage', 'UploadController@UploadImage');
 Route::get('/image', 'ImageController@index');
+
+Route::post('/profile', 'ProfileController@create');

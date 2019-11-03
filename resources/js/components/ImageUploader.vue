@@ -3,7 +3,7 @@
         Upload Images Here:
         <form>
             <input type="file" @change="uploadFile">
-            <button>Upload!</button>
+            <button>What!</button>
         </form>
     </section>
 </template>
