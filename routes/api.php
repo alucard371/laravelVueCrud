@@ -23,3 +23,4 @@ Route::post('/uploadimage', 'UploadController@UploadImage');
 Route::get('/image', 'ImageController@index');
 
 Route::post('/profile', 'ProfileController@create');
+Route::get('/profile', 'ProfileController@show');

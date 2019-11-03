@@ -1865,31 +1865,43 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       name: '',
-      imagepath: ''
+      imagepath: '',
+      profile: ''
     };
   },
   mounted: function mounted() {
-    this.index();
-    this.getImagePath();
+    // this.index();
+    // this.getImagePath();
+    this.getProfile();
   },
   methods: {
-    index: function index() {
+    // index() {
+    //     axios.get('/api/basicinfo')
+    //     .then(response=>{
+    //         console.log(response.data);
+    //         this.name = response.data.name;
+    //     })
+    //     .catch(error=>{
+    //         console.log(error);
+    //     })
+    // },
+    // getImagePath() {
+    //     axios.get('/api/image')
+    // .then(response => {
+    //     this.imagepath = response.data.path;
+    // })
+    // .catch(error => {
+    //     console.log(error);
+    // });
+    // },
+    getProfile: function getProfile() {
       var _this = this;
 
-      axios.get('/api/basicinfo').then(function (response) {
+      axios.get('/api/profile').then(function (response) {
         console.log(response.data);
-        _this.name = response.data.name;
+        _this.profile = response.data;
       })["catch"](function (error) {
-        console.log(error);
-      });
-    },
-    getImagePath: function getImagePath() {
-      var _this2 = this;
-
-      axios.get('/api/image').then(function (response) {
-        _this2.imagepath = response.data.path;
-      })["catch"](function (error) {
-        console.log(error);
+        console.error(error);
       });
     }
   }

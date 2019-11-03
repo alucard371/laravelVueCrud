@@ -27,33 +27,45 @@ export default {
         return {
             name: '',
             imagepath: '',
+            profile: '',
         }
     },
 
     mounted() {
-        this.index();
-        this.getImagePath();
+        // this.index();
+        // this.getImagePath();
+        this.getProfile();
     },
     methods: {
-        index() {
-            axios.get('/api/basicinfo')
-            .then(response=>{
+        // index() {
+        //     axios.get('/api/basicinfo')
+        //     .then(response=>{
+        //         console.log(response.data);
+        //         this.name = response.data.name;
+        //     })
+        //     .catch(error=>{
+        //         console.log(error);
+        //     })
+        // },
+        // getImagePath() {
+        //     axios.get('/api/image')
+        // .then(response => {
+        //     this.imagepath = response.data.path;
+        // })
+        // .catch(error => {
+        //     console.log(error);
+        // });
+        // },
+        getProfile() {
+            axios.get('/api/profile')
+            .then(response => {
                 console.log(response.data);
-                this.name = response.data.name;
+                this.profile = response.data;
             })
-            .catch(error=>{
-                console.log(error);
-            })
-        },
-        getImagePath() {
-            axios.get('/api/image')
-        .then(response => {
-            this.imagepath = response.data.path;
-        })
-        .catch(error => {
-            console.log(error);
-        });
-        },
+            .catch(error => {
+                console.error(error);
+            });
+        }
     },
 }
 </script>
