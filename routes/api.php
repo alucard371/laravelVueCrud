@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('basicinfo', 'BasicinfoController');
 
 Route::post('/uploadimage', 'UploadController@UploadImage');
+Route::get('/image', 'ImageController@index');

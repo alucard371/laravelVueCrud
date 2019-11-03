@@ -1,6 +1,8 @@
 <template>
   <div>
       <masthead :name="name"></masthead>
+      <img :src="'storage/userpics/' + imagepath"/>
+      {{ imagepath }}
       <imageuploader></imageuploader>
   </div>
 </template>
@@ -18,12 +20,14 @@ export default {
    },
     data() {
         return {
-            name: ''
+            name: '',
+            imagepath: '',
         }
     },
 
     mounted() {
         this.index();
+        this.getImagePath();
     },
     methods: {
         index() {
@@ -36,9 +40,16 @@ export default {
                 console.log(error);
             })
         },
-
+        getImagePath() {
+            axios.get('/api/image')
+        .then(response => {
+            this.imagepath = response.data.path;
+        })
+        .catch(error => {
+            console.log(error);
+        });
+        },
     },
-
 }
 </script>
 

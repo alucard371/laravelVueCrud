@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Image;
 
-class UploadController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class UploadController extends Controller
      */
     public function index()
     {
-        //
+        $image = Image::all()[0];
+        return $image;
     }
 
     /**
@@ -81,13 +82,5 @@ class UploadController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function UploadImage()
-    {
-        $image = new Image();
-        $image->path = request()->file('userpic')->hashName();
-        $image->save();
-        return request()->file('userpic')->store('/public/userpics');
     }
 }

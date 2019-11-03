@@ -1847,6 +1847,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1857,11 +1859,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      name: ''
+      name: '',
+      imagepath: ''
     };
   },
   mounted: function mounted() {
     this.index();
+    this.getImagePath();
   },
   methods: {
     index: function index() {
@@ -1870,6 +1874,15 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/basicinfo').then(function (response) {
         console.log(response.data);
         _this.name = response.data.name;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    getImagePath: function getImagePath() {
+      var _this2 = this;
+
+      axios.get('/api/image').then(function (response) {
+        _this2.imagepath = response.data.path;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -37271,6 +37284,8 @@ var render = function() {
     [
       _c("masthead", { attrs: { name: _vm.name } }),
       _vm._v(" "),
+      _c("img", { attrs: { src: "storage/userpics/" + _vm.imagepath } }),
+      _vm._v("\n    " + _vm._s(_vm.imagepath) + "\n    "),
       _c("imageuploader")
     ],
     1
