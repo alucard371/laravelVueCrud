@@ -1,22 +1,23 @@
 <template>
   <div>
       <masthead :name="name"></masthead>
-      <img :src="'storage/userpics/' + imagepath"/>
-      {{ imagepath }}
-      <imageuploader></imageuploader>
+      <img v-bind:src="'storage/userpics/' + imagepath"/>
+      <!-- Debug imagepath -->
+      <!-- {{ imagepath }} -->
+      <!-- <imageuploader></imageuploader> -->
   </div>
 </template>
 
 <script>
 import masthead from './masthead';
-import imageuploader from './ImageUploader';
+// import imageuploader from './ImageUploader';
 export default {
 
 
    name: "App",
    components: {
        masthead,
-       imageuploader
+    //    imageuploader
    },
     data() {
         return {
